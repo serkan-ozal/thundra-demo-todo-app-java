@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Foresight Telemetry
         uses: thundra-io/foresight-workflow-telemetry@initial-impl
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Set up JDK 8
         uses: actions/setup-java@v1
