@@ -11,7 +11,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Foresight Telemetry
+      - name: Workflow Telemetry
         uses: thundra-io/workflow-telemetry-action@feature/post-to-job-summary
       - uses: actions/checkout@v2
       - name: Set up JDK 8
