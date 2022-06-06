@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Start proc tracer
         run: |
-          sudo ./proc_tracer > proc_traces.txt &
+          chmod +x ./proc_tracer && sudo ./proc_tracer > proc_traces.txt &
       - name: Set up JDK 8
         uses: actions/setup-java@v1
         with:
