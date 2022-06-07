@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Workflow Telemetry
-        uses: thundra-io/workflow-telemetry-action@v1
+        uses: thundra-io/workflow-telemetry-action@fix/handle-empty-metrics
       - uses: actions/checkout@v2
       - name: Set up JDK 8
         uses: actions/setup-java@v1
