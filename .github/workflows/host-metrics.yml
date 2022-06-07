@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Workflow Telemetry
         uses: thundra-io/workflow-telemetry-action@fix/handle-empty-metrics
