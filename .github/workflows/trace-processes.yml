@@ -9,12 +9,14 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Start proc tracer
-        run: |
-          sudo apt-get update
-          sudo apt-get upgrade libc6
-          sudo apt-get upgrade libstdc++6
-          chmod +x ./proc_tracer && sudo ./proc_tracer > proc_traces.txt &
+#      - name: Start proc tracer
+#        run: |
+#          sudo apt-get update
+#          sudo apt-get upgrade libc6
+#          sudo apt-get upgrade libstdc++6
+#          chmod +x ./proc_tracer && sudo ./proc_tracer > proc_traces.txt &
+      - name: Collect Workflow Telemetry
+        uses: thundra-io/workflow-telemetry-action@feature/proc-tracer
       - name: Set up JDK 8
         uses: actions/setup-java@v1
         with:
