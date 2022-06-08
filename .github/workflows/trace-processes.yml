@@ -29,8 +29,8 @@ jobs:
         with:
           name: test-result-report
           path: target/surefire-reports/
-      - uses: actions/upload-artifact@v3
-        with:
-          name: proc_traces
-          path: |
-            proc_traces.txt
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: proc_traces
+#          path: |
+#            proc_traces.txt
