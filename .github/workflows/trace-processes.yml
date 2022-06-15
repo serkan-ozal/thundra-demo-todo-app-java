@@ -30,7 +30,10 @@ jobs:
           name: test-result-report
           path: target/surefire-reports/
       - name: Install AWS CLI
-        uses: unfor19/install-aws-cli-action@v1.0.3  
+        uses: unfor19/install-aws-cli-action@v1.0.3
+        with:
+          version: 1     
+          verbose: true
       - name: Download from AWS S3
         run: |
           aws s3 cp s3://ankaracloudmeetup-bigdata-demo-lib . --recursive
