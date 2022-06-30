@@ -11,13 +11,15 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Collect Workflow Telemetry
+        uses: thundra-io/workflow-telemetry-action@feature/file-tracer    
       - uses: actions/checkout@v2
-      - name: Start file tracer
-        run: |
-           sudo apt-get update
-           sudo apt-get upgrade libc6
-           sudo apt-get upgrade libstdc++6
-           chmod +x ./file_tracer && sudo ./file_tracer > file_traces.txt &
+#      - name: Start file tracer
+#        run: |
+#           sudo apt-get update
+#           sudo apt-get upgrade libc6
+#           sudo apt-get upgrade libstdc++6
+#           chmod +x ./file_tracer && sudo ./file_tracer > file_traces.txt &
 #      - name: Checkout thundra-demo-todo-app-java repo
 #        uses: actions/checkout@v2
 #        with:
@@ -35,8 +37,8 @@ jobs:
         with:
           name: test-result-report
           path: target/surefire-reports/
-      - uses: actions/upload-artifact@v3
-        with:
-          name: file_traces
-          path: |
-            file_traces.txt
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: file_traces
+#          path: |
+#            file_traces.txt
