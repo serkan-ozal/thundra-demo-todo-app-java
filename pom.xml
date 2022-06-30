@@ -91,7 +91,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
-                        -javaagent:${project.basedir}/thundra-agent-bootstrap.jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=127.0.0.1:1111 -Dthundra.agent.debugger.auth.token=DKw9G3xbYtnYeoVFyLz3fQdHkZqzv/C8Gl0hCjOsp1w=
+                        -javaagent:${project.basedir}/thundra-agent-bootstrap.jar
                     </argLine>
                 </configuration>
             </plugin>
