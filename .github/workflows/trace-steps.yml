@@ -20,6 +20,7 @@ jobs:
           mvn clean install
       - name: Run invalid command
         run: |
+          sleep 3
           x y z     
       - name: Archive test results
         uses: actions/upload-artifact@v2
