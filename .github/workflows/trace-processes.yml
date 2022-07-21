@@ -16,6 +16,8 @@ jobs:
 #          chmod +x ./proc_tracer && sudo ./proc_tracer > proc_traces.txt &
       - name: Collect Workflow Telemetry
         uses: runforesight/workflow-telemetry-action@feature/process-trace-chart
+        with:
+          proc_trace_chart_show: true
       - uses: actions/checkout@v2
       - name: Set up JDK 8
         uses: actions/setup-java@v1
