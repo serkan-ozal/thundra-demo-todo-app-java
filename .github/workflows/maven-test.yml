@@ -40,7 +40,6 @@ jobs:
       - name: Export Workflow Trace
         uses: inception-health/otel-export-trace-action@latest
         with:
-          otlpEndpoint: grpc://otel-collector-staging.catchpoint.net:443
+          otlpEndpoint: grpc://otel-collector-staging.tracing.catchpoint.net:443/
           otlpHeaders: x-catchpoint-api-key=${{ secrets.CP_TRACING_API_KEY }}
-          otelServiceName: Maven Test
           githubToken: ${{ secrets.GITHUB_TOKEN }}
