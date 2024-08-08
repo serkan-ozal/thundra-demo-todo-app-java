@@ -31,3 +31,15 @@ jobs:
         with:
           name: test-result-report
           path: target/surefire-reports/
+  otel-export-trace:
+    if: always()
+    name: OpenTelemetry Export Trace
+    runs-on: ubuntu-latest
+    needs: [build] # must run when all jobs are complete
+    steps:
+      - name: Export Workflow Trace
+        uses: inception-health/otel-export-trace-action@latest
+        with:
+          otlpEndpoint: grpc://otel-collector-staging.catchpoint.net:443/
+          otlpHeaders: x-catchpoint-api-key=${{ secrets.CP_TRACING_API_KEY }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
